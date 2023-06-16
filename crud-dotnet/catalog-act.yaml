@@ -1,8 +1,8 @@
 aapiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: springboot-template
-  title: Spring Boot gRPC Service
+  name: act-template
+  title: Comopnenete ACT
   description: Create a simple microservice using gRPC and Spring Boot Java
   tags:
     - recommended
