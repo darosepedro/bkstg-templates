@@ -1,4 +1,4 @@
-aapiVersion: backstage.io/v1beta1
+apiVersion: backstage.io/v1beta1
 kind: Template
 metadata:
   name: act-template
