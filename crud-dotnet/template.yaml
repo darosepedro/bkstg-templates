@@ -1,0 +1,82 @@
+apiVersion: backstage.io/v1beta3
+kind: Template
+metadata:
+  name: crud-dotnet-api
+  title: .Net Crud Api - By Pedro Nascimento
+  description: Use este modelo para criar a API usando .Net
+  tags: [donet, webapi, .net, c#]
+
+spec:
+  owner: darosepedro/bkstg-templates
+  type: service
+  parameters:
+    - title: Projeto
+      required: [name, title, description, namaspace]
+      properties:
+        name:
+          title: Nome do Projeto
+          type: string
+          description: Informe o nome do projeto que deseja criar
+          ui:autofocus: true
+        title:
+          title: Título do Projeto
+          type: string
+          description: Informe um nome amigável para o projeto que deseja criar
+        description:
+          title: Descrição do Projeto
+          type: string
+          description: Informe os objetivos e características do projeto que deseja criar
+          ui:options:
+            rows: 5
+        namespace:
+          title: Namespace-raiz do Projeto
+          type: string
+          description: Informe apenas letras e pontos
+        owner:
+          title: Propietário
+          type: string
+          description: Informe o Time responsável por este Projeto
+    - title: Repositório
+      required: [repoUrl]
+      properties:
+        repoUrl:
+          title: Url do Repositorio
+          type: string
+          description: Informe a Url do repositório onde você deseja versionar o código do projeto
+
+  steps:
+    - id: template
+      name: Criando Projeto a partir do Template
+      action: fetch:template
+      input:
+        url: ./template
+        values:
+          name: '{{ paramaters.name }}'
+          title: '{{ paramaters.title }}'
+          description: '{{ paramaters.description }}'
+          namespace: '{{ paramaters.namespace }}'
+          destination: '{{ parseRepoUrl paramaters.repoUrl }}'
+          title: '{{ paramaters.title }}'
+    
+    - id: publish
+      name: Criando Repositório e Versionando o Código Fonte
+      action: publish:github
+      input:
+        allowedHosts: ['gitHub.com']
+        description: '{{ paramaters.description }}'
+        repoUrl: '{{ paramaters.repoUrl }}'
+
+    - id: register
+      name: Registrando o Template no Backstage
+      action: catalog:register
+      input:
+        repoContentsUrl: '{{ steps.publish.output.repoContensUrl }}'
+        catalogInfoPath: '/catalog-info.yaml'
+
+  output:
+    remoteUrl: '{{steps.publish.output.remoteUrl}}'
+    entityRef: '{{steps.register.output.entityRef}}'
+      
+
+
+
