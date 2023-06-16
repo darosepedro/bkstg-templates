@@ -56,7 +56,7 @@ spec:
           description: '{{ paramaters.description }}'
           namespace: '{{ paramaters.namespace }}'
           destination: '{{ parseRepoUrl paramaters.repoUrl }}'
-          title: '{{ paramaters.title }}'
+          owner: '{{ paramaters.owner }}'
     
     - id: publish
       name: Criando Repositório e Versionando o Código Fonte
