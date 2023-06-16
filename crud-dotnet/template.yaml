@@ -4,7 +4,7 @@ metadata:
   name: crud-dotnet-api
   title: Dot Net Crud Api - By Pedro Nascimento
   description: Use este modelo para criar a API usando Dot Net
-  tags: [donet, webapi, dotnet, c#]
+  tags: [donet, webapi, dotnet]
 
 spec:
   owner: darosepedro/bkstg-templates
