@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: crud-dotnet-api
-  title: Dot Net Crud Api - By Pedro Nascimento
+  title: Dot Net Crud Api - By Act
   description: Use este modelo para criar a API usando Dot Net
   tags: [donet, webapi, dotnet]
 
