@@ -51,20 +51,20 @@ spec:
       input:
         url: ./template
         values:
-          name: '{{ paramaters.name }}'
-          title: '{{ paramaters.title }}'
-          description: '{{ paramaters.description }}'
-          namespace: '{{ paramaters.namespace }}'
-          destination: '{{ parseRepoUrl paramaters.repoUrl }}'
-          owner: '{{ paramaters.owner }}'
+          name: '{{ parameters.name }}'
+          title: '{{ parameters.title }}'
+          description: '{{ parameters.description }}'
+          namespace: '{{ parameters.namespace }}'
+          destination: '{{ parseRepoUrl parameters.repoUrl }}'
+          owner: '{{ parameters.owner }}'
     
     - id: publish
       name: Criando Repositório e Versionando o Código Fonte
       action: publish:github
       input:
         allowedHosts: ['gitHub.com']
-        description: '{{ paramaters.description }}'
-        repoUrl: '{{ paramaters.repoUrl }}'
+        description: '{{ parameters.description }}'
+        repoUrl: '{{ parameters.repoUrl }}'
 
     - id: register
       name: Registrando o Template no Backstage
