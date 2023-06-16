@@ -1,4 +1,4 @@
-aapiVersion: scaffolder.backstage.io/v1beta3
+aapiVersion: backstage.io/v1beta1
 kind: Template
 metadata:
   name: act-template
