@@ -2,8 +2,8 @@ apiVersion: backstage.io/v1beta3
 kind: Template
 metadata:
   name: crud-dotnet-api
-  title: .Net Crud Api - By Pedro Nascimento
-  description: Use este modelo para criar a API usando .Net
+  title: Dot Net Crud Api - By Pedro Nascimento
+  description: Use este modelo para criar a API usando Dot Net
   tags: [donet, webapi, dotnet, c#]
 
 spec:
