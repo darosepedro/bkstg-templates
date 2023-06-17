@@ -5,4 +5,4 @@ metadata:
   description: A collection of all Act Backstage Templates
 spec:
   targets:
-    - ./apis/hello-world-api.yaml
+    - ./crud-dotnet/template.yaml
