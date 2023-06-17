@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: act-templates
+  description: A collection of all Act Backstage Templates
+spec:
+  targets:
+    - ./apis/hello-world-api.yaml
