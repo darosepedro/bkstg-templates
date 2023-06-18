@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: templates-all
+  description: A collection of all templates
+spec:
+  targets:
+    - ./dotnet-api/template.yaml
+    - ./angular-site/template.yaml
